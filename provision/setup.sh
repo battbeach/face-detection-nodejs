@@ -22,10 +22,9 @@ sudo apt-get install imagemagick -y > /dev/null
 echo "Installing Node.js and npm"
 sudo apt-get install -y nodejs > /dev/null
 
-echo "Installing Bower"
-sudo npm bower -g
+# There are issues with npm 5.0.3 where dependencies are not always installed.
+# Using yarn instead
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-echo "Install Node modules"
-npm install -g nodemon
-npm install -g grunt
-npm install -g grunt-cli
+sudo apt-get update && sudo apt-get install yarn

@@ -15,12 +15,12 @@ git clone https://github.com/lukaswhite/face-detection-nodejs .
 cd face-detection-nodejs
 vagrant up
 vagrant ssh
-npm install
+yarn install
 node index.js 
 ```
 
 Then visit:
 
 ```
-http://192.168.10.10:8080/
+http://localhost:8080/
 ```
